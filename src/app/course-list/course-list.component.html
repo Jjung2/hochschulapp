@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="courseList">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 90%;">
+                    <h5 class="card-title">All Categories</h5>
+                    <div class="card-body">
+
+                        <div class="courseContent">
+                            <a class="a" [routerLink]="" >
+                                <h5 class="card-title">All</h5>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+
+                <div class="card" style="width: 90%;">
+                    <h5 class="card-title">Top Course</h5>
+                    <div class="card-body">
+
+                        <div *ngFor="let itemTC of allCourse" class="courseContent">
+                            <a class="a" [routerLink]="" (click)='selectCourse(itemTC.id);' >
+                                <h5 class="card-title">{{itemTC.title}}</h5>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

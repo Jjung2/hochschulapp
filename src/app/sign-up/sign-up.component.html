@@ -1,0 +1,26 @@
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://img.icons8.com/doodle/344/user-female--v1.png" id="icon" alt="User Icon" style="    height: 82px;
+        width: 91px;" />
+      </div>
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" [(ngModel)]="email" class="fadeIn second" name="login" placeholder="Email">
+        <input type="password" id="password" [(ngModel)]="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="password" id="confirmpassword" [(ngModel)]="confirmPassword" class="fadeIn third" name="login" placeholder="Confirm Password">
+        <input type="button" (click)='onSubmit()' class="fadeIn fourth" value="Register">
+      </form>
+  
+      <!-- Password Reminder -->
+      <div id="formFooter">
+        <a routerLink="/login" class="underlineHover" href="#">login</a>
+      </div>
+  
+    </div>
+  </div>

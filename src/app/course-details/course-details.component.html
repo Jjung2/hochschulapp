@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="col-md-12">
+        <h1 style="    margin-bottom: 51px;">{{this.courseDetails.title}}</h1>
+        <p [innerHTML]="this.courseDetails.description"></p>
+        <div>
+            <!-- <span class="badge">Field sportkategorien :
+                    {{this.courseDetails.description}}</span> -->
+        
+        </div>
+        <hr>
+       
+    </div>
+    
+    <div class="col-md-12" *ngIf="isLoggedin">
+        <button (click)='onSignUpCourse();' class="btn btn-success" style="width: 100%; margin-bottom: 10px;">SignUp for course</button>
+    </div>
+    <div class="col-md-12" *ngIf="!isLoggedin">
+        <button class="btn btn-success" style="width: 100%; margin-bottom: 10px;" ><a routerLink="/login" style="color: aliceblue;">login</a></button>
+    </div>
+</div>

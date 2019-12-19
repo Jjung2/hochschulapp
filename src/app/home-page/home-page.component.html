@@ -1,0 +1,79 @@
+<div class="container">
+   <div class="row">
+       <div class="col-sm-12">
+        <div class="row float-right" *ngIf="!isLoggedin" style="float: right;">
+            <div class="col-sm-4"><a routerLink="/login" class="btn btn-success">Login</a></div>
+            <div class="col-sm-3"><a routerLink="/signup" class="btn btn-success">Register</a></div>
+        </div>
+       </div>
+   </div>
+   
+   <div class="row">
+       <div class="col-sm-12">
+        <div class="row " *ngIf="isLoggedin" style="float: right;">
+            <div class="col-sm-4" style="margin-right: 40px;"> <h4>{{user}}</h4></div>
+            <div class="col-sm-1"><a routerLink="" (click)='logout()' class="btn btn-info">LogOut</a></div>
+        </div>
+       </div>
+   </div>
+    <br/><br/>
+    <div class="news border" style="    border: solid 1px #e3e3e3;">
+
+        <div class="row border">
+            <div class="col-sm-12">
+
+                <div class="card" style="width: 90%;">
+                    <h5 class="h3 card-title" style="font-weight: 700;">Subscribed Courses</h5>
+                    <div class="card-body" *ngFor="let mycourseitem of subsribedCourses">
+                        <h5 class="card-title">{{mycourseitem.title}}</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="news" style="    border: solid 1px #e3e3e3;">
+
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card" style="width: 90%;">
+                    <h5 class="h3 card-title" style="font-weight: 700;">News</h5>
+                    <div class="card-body" *ngFor="let item of newsData">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{item.field_kurztitel}}</h6>
+                        <p class="card-text" [innerHTML]="item.body"></p>
+                        <!-- <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a> -->
+                        <p class="card-footer">Changed Date : <strong>{{item.changed}}</strong> </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="topCourse">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card" style="width: 90%;">
+                    <h5 class="h3 card-title" style="font-weight: 700;">Top Course</h5>
+                    <div class="card-body">
+
+                        <div *ngFor="let itemTC of topCourseData" class="courseContent">
+                            <a class="a" [routerLink]="" (click)="onCourseClick(itemTC)">
+                                <h5 class="card-title">Course Title : {{itemTC.title}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Field sportkategorien :
+                                    {{itemTC.field_sportkategorien}}</h6>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
